@@ -24,9 +24,9 @@ class MyTestCase(unittest.TestCase):
 
     def test_get_sum(self):
         content = get_content_from_file('../resources/bestellungen.csv')
-        content_gefiltert1 = filter_content(content, "Vorname", "Sibylla")
-        content_gefiltert2 = filter_content(content_gefiltert1, "Nachname", "Vogt")
-        summe = get_sum(content_gefiltert2)
+        content_vorname_gefiltert = filter_content(content, "Vorname", "Sibylla")
+        content_nachname_gefiltert = filter_content(content_vorname_gefiltert, "Nachname", "Vogt")
+        summe = get_sum(content_nachname_gefiltert)
 
         self.assertEqual(summe, 49.02)
 
