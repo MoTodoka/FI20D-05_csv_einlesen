@@ -1,8 +1,7 @@
 import csv
-from typing import Dict
 
 
-def get_content_from_file(dateiname: str) -> {}:
+def get_content_from_file(dateiname: str) -> [{}]:
     with open(dateiname, encoding='utf-8') as csv_file:
         result = []
         csv_reader = csv.reader(csv_file, delimiter=',')
@@ -16,7 +15,7 @@ def get_content_from_file(dateiname: str) -> {}:
 
 
 def get_dict_from_row(header: [], row: []) -> {}:
-    result: Dict[str, str] = {}
+    result = {}
     for i, columnName in enumerate(header):
         result[columnName] = row[i]
     return result
